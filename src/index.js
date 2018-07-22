@@ -17,8 +17,9 @@ import {
 
 
 
+import NavBar from './components/Navbar';
 
-import Home from './pages/Home';
+import Home from './pages/Home.js';
 import StorePage from './pages/StorePage';
 
 const history = createHistory();
@@ -28,9 +29,14 @@ ReactDOM.render(
   <Provider store={store}>
     {/* ConnectedRouter will use the store from Provider automatically */}
     <ConnectedRouter history={history}>
-      <div>
-        <Route exact path="/" component={Home} />
-        <Route path="/store" component={StorePage} />
+    <div>
+        <div>
+          <NavBar/>
+        </div>
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route path="/store" component={StorePage} />
+        </div>
       </div>
     </ConnectedRouter>
   </Provider>,
