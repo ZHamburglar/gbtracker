@@ -4,11 +4,11 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 // Import root reducer
 import rootReducer from '../reducers';
-import createHistory from "history/createBrowserHistory";
+// import createHistory from "history/createBrowserHistory";
 
 
 const initialState = {};
-const history = createHistory();
+// const history = createHistory();
 
 const middleware = [thunk];
 

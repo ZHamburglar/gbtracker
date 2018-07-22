@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import store from './store/store';
@@ -10,9 +9,9 @@ import createHistory from "history/createBrowserHistory";
 import { Route } from "react-router";
 import {
   ConnectedRouter,
-  routerReducer,
-  routerMiddleware,
-  push
+  // routerReducer,
+  // routerMiddleware,
+  // push
 } from "react-router-redux";
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
-import { Link } from 'react-router-dom'; 
-import { LocaleProvider, DatePicker, message } from 'antd';
+// import { Grid } from 'react-bootstrap';
+// import { Link } from 'react-router-dom'; 
+// import { LocaleProvider, DatePicker, message } from 'antd';
 
 
 
@@ -10,7 +10,7 @@ import '../App.css';
 
 
 // Import redux provider
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 class Tracking extends Component {
   constructor(props) {
@@ -32,8 +32,5 @@ class Tracking extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  promoCode: state.promoCode.value
-});
 
 export default Tracking;
