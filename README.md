@@ -18,5 +18,7 @@ Create the .env file with these variable:
 GUNBROKER_TEST_KEY
 
 Todo:
+
 React Router for Between Pages,
+
 Redux Persist
