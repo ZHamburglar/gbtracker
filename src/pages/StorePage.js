@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-bootstrap';
-import SubTotal from './components/Subtotal/Subtotal';
-import PickupSavings from './components/PickupSavings/PickupSavings';
-import TaxesFees from './components/TaxesFees/TaxesFees';
-import EstimatedTotal from './components/EstimatedTotal/EstimatedTotal';
-import ItemDetails from './components/ItemDetails/ItemDetails';
-import PromoCodeDiscount from './components/PromoCode/PromoCode';
-import './App.css';
+import SubTotal from '../components/Subtotal/Subtotal';
+import PickupSavings from '../components/PickupSavings/PickupSavings';
+import TaxesFees from '../components/TaxesFees/TaxesFees';
+import EstimatedTotal from '../components/EstimatedTotal/EstimatedTotal';
+import ItemDetails from '../components/ItemDetails/ItemDetails';
+import PromoCodeDiscount from '../components/PromoCode/PromoCode';
+import '../App.css';
 
 
 
 // Import redux provider
 import { connect } from 'react-redux';
-import { handleChange } from './actions/promoCodeActions';
+import { handleChange } from '../actions/promoCodeActions';
 
-class App extends Component {
+class StorePage extends Component {
   constructor(props) {
     super(props);
 
@@ -79,4 +79,4 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
   handleChange
-})(App);
+})(StorePage);

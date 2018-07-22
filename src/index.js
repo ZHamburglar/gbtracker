@@ -5,9 +5,34 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import store from './store/store';
 
+
+import createHistory from "history/createBrowserHistory";
+import { Route } from "react-router";
+import {
+  ConnectedRouter,
+  routerReducer,
+  routerMiddleware,
+  push
+} from "react-router-redux";
+
+
+
+
+import Home from './pages/Home';
+import StorePage from './pages/StorePage';
+
+const history = createHistory();
+
+
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    {/* ConnectedRouter will use the store from Provider automatically */}
+    <ConnectedRouter history={history}>
+      <div>
+        <Route exact path="/" component={Home} />
+        <Route path="/store" component={StorePage} />
+      </div>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById('root')
 );
