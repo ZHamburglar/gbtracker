@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import { Grid } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; 
-import { LocaleProvider, DatePicker, message } from 'antd';
-import frFR from 'antd/lib/locale-provider/fr_FR';
-import moment from 'moment';
-import 'moment/locale/fr';
+import { connect } from 'react-redux';
+
+import { Input } from 'antd';
+// import moment from 'moment';
 
 
 import '../App.css';
 
+import SearchBar from '../components/SearchBar';
+
+const Search = Input.Search;
+
 
 
 // Import redux provider
-import { connect } from 'react-redux';
 
 class Home extends Component {
   constructor(props) {
@@ -28,14 +31,14 @@ class Home extends Component {
   render() {
     return (
       <div>
-        Hello this is Kevin    
-      </div>
+        <div>
+          <SearchBar />
+
+        </div>      
+    </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  promoCode: state.promoCode.value
-});
 
 export default Home;

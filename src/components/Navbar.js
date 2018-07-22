@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
+// import { Grid } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; 
 
 import { Menu, Icon } from 'antd';
@@ -39,7 +39,7 @@ class Navbar extends Component {
             </Menu.Item>
             <Menu.Item key="app">
               <Icon type="appstore" />
-              <Link to="/">Tracking</Link>
+              <Link to="/tracking">Tracking</Link>
 
             </Menu.Item>
             <Menu.Item key="alipay">

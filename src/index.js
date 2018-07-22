@@ -20,6 +20,8 @@ import {
 import NavBar from './components/Navbar';
 
 import Home from './pages/Home.js';
+import Tracking from './pages/Tracking';
+
 import StorePage from './pages/StorePage';
 
 const history = createHistory();
@@ -35,6 +37,8 @@ ReactDOM.render(
         </div>
         <div>
           <Route exact path="/" component={Home} />
+          <Route path="/tracking" component={Tracking} />
+
           <Route path="/store" component={StorePage} />
         </div>
       </div>
