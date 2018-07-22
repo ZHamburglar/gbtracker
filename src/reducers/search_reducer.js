@@ -4,14 +4,14 @@ import {
 
 
 const INITIAL_STATE = {
-    searchItem: ''
+    searchItem: 'hello'
 }
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type){
         case SEARCH_CHANGE:
             console.log('This is changed to: ', action.payload)
-            return {...state}
+            return {...state, searchItem: action.payload}
         default:
             return state;
     };
