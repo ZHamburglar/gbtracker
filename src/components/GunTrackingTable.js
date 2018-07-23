@@ -15,7 +15,7 @@ import "react-table/react-table.css";
 import "./index.css";
 
 
-class GunSearchTable extends Component {
+class GunTrackingTable extends Component {
 
   render() {
     const { gList } = this.props;
@@ -92,4 +92,4 @@ const mapStateToProps = ({ searchReducer }) => {
     return { gList }
   }
 
-export default connect(mapStateToProps, actions)(GunSearchTable);
+export default connect(mapStateToProps, actions)(GunTrackingTable);

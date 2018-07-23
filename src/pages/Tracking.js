@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 // import { Link } from 'react-router-dom'; 
 // import { LocaleProvider, DatePicker, message } from 'antd';
 
+import GunTrackingTable from '../components/GunTrackingTable';
+
 
 
 import '../App.css';
@@ -26,7 +28,7 @@ class Tracking extends Component {
   render() {
     return (
       <div>
-        Tracking page   
+        <GunTrackingTable /> 
       </div>
     );
   }

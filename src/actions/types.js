@@ -3,3 +3,6 @@ export const SEARCH_SUBMIT = 'search_submit';
 export const SEARCH_INITIATE = 'search_initiate';
 export const SEARCH_SUCCESS = 'search_success';
 export const SEARCH_FAILURE = 'search_failure';
+
+
+export const TRACK_ITEM = 'track_item';

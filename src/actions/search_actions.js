@@ -16,7 +16,7 @@ const GB_QUERY_PARAMS = {
 }
 
 const buildGBQueryUrl = (text) => {
-    return 'https://cors-anywhere.herokuapp.com/https://api.sandbox.gunbroker.com/v1/items?keywords=glock'
+    return 'https://cors-anywhere.herokuapp.com/https://api.sandbox.gunbroker.com/v1/items?keywords=glock&NoReserveItems=true&HasPictures=true'
 }
 
 
