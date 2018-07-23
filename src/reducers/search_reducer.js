@@ -7,6 +7,7 @@ import {
 } from '../actions/types';
 
 
+
 const INITIAL_STATE = {
     searchItem: '',
     loading: false,
@@ -22,7 +23,7 @@ export default (state = INITIAL_STATE, action) => {
         //     console.log("Search submitteded")
         //     return {...state,};
         case SEARCH_INITIATE:
-            console.log("Search Initiated: ")
+            console.log("Search Initiated")
             return {...state, loading: true};
         case SEARCH_FAILURE:
             return {...state, loading: false};

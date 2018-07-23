@@ -1,3 +1,6 @@
+import axios from 'axios';
+import qs from 'qs';
+
 import {
     SEARCH_CHANGE,
     SEARCH_SUBMIT,
@@ -5,6 +8,9 @@ import {
     SEARCH_SUCCESS,
     SEARCH_FAILURE
 } from './types';
+
+const GB_ROOT_URL ='https://api.sandbox.gunbroker.com/v1/items?'
+
 
 
 
@@ -17,7 +23,14 @@ export const searchChange = (text) => {
 }
 
 export const searchSubmit = (text) => async (dispatch) => {
-    console.log("submitting a search for: ", text)
-    dispatch({type: SEARCH_INITIATE})
+    try {
+        console.log("submitting a search for: ", text)
+        dispatch({type: SEARCH_INITIATE})
+    } catch(e){
+        return {
+            type: SEARCH_FAILURE
+        }
+    }
+    
 
 }
