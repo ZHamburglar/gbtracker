@@ -32,7 +32,7 @@ class NavigationBar extends Component {
                 <Navbar>
                     <Navbar.Header>
                         <Navbar.Brand>
-                        Stuff here
+                            GBTracker
                         </Navbar.Brand>
                     </Navbar.Header>
                     <Nav>

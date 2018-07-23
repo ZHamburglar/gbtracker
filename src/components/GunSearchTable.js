@@ -45,7 +45,7 @@ class GunSearchTable extends Component {
                 {
                     Header: "Status",
                     Cell: (row) => {
-                        console.log("huh", row.original)
+                        // console.log("huh", row.original)
                       return <div>{row.original.seller.feedbackRating} {row.original.seller.username}</div>
                     },
                   id: "status"
@@ -53,7 +53,7 @@ class GunSearchTable extends Component {
                 {
                     Header: "Status",
                     Cell: (row) => {
-                        console.log("huh", row.original)
+                        // console.log("huh", row.original)
                       return <div><img height={50} src={row.original.thumbnailURL}/></div>
                     },
                   id: "status"
@@ -65,7 +65,7 @@ class GunSearchTable extends Component {
                 {
                     Header: "Track",
                     Cell: (row) => {
-                        console.log("huh", row.original)
+                        // console.log("huh", row.original)
                       return <div><Button onClick={()=> this.props.addItemTrack(row.original)}>Click Me</Button></div>
                     },
                   id: "status"
