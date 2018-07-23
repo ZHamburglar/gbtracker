@@ -1,48 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
-import { Provider } from 'react-redux';
-import store from './store/store';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'connected-react-router'
+import store, { history } from './store'
+import App from './App'
 
+import './App.css'
 
-import createHistory from "history/createBrowserHistory";
-import { Route } from "react-router";
-import {
-  ConnectedRouter,
-  // routerReducer,
-  // routerMiddleware,
-  // push
-} from "react-router-redux";
+const target = document.querySelector('#root')
 
-
-
-import NavBar from './components/Navbar';
-
-import Home from './pages/Home.js';
-import Tracking from './pages/Tracking';
-
-import StorePage from './pages/StorePage';
-
-const history = createHistory();
-
-
-ReactDOM.render(
+render(
   <Provider store={store}>
-    {/* ConnectedRouter will use the store from Provider automatically */}
     <ConnectedRouter history={history}>
-    <div>
-        <div>
-          <NavBar/>
-        </div>
-        <div>
-          <Route exact path="/" component={Home} />
-          <Route path="/tracking" component={Tracking} />
-
-          <Route path="/store" component={StorePage} />
-        </div>
+      <div>
+        <App />
       </div>
     </ConnectedRouter>
   </Provider>,
-  document.getElementById('root')
-);
-registerServiceWorker();
+  target
+)

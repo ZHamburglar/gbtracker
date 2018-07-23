@@ -41,7 +41,7 @@ class SearchBar extends Component {
             </FormGroup>{' '}
             <Button 
                 onClick={this.handleSubmit}
-                >Send invitation
+                >Search
             </Button>
         </Form>
     </div>
@@ -50,8 +50,8 @@ class SearchBar extends Component {
 }
 
 const mapStateToProps = ({ searchReducer }) => {
-    const { searchItem } = searchReducer
-    return { searchItem }
+    const { searchItem, gList } = searchReducer
+    return { searchItem, gList }
 }
 
 export default connect(mapStateToProps, actions)(SearchBar);
