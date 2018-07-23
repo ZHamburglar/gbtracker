@@ -4,10 +4,13 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from './store'
 import App from './App'
-
 import './App.css'
+require('dotenv').config()
+
 
 const target = document.querySelector('#root')
+
+console.log("this is the index then", process.env)
 
 render(
   <Provider store={store}>
