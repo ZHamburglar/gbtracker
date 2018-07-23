@@ -6,6 +6,8 @@ import HistoryGraph from './pages/HistoryGraph';
 
 import NavigationBar from './components/Navbar';
 
+import Footer from './components/Footer';
+
 class App extends Component {
   render() {
     return (
@@ -18,6 +20,9 @@ class App extends Component {
           <Route path="/graph" component={HistoryGraph} />
 
         </main>
+
+        <Footer/>
+        
       </div>
     );
   }

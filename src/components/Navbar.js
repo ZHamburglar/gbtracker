@@ -6,25 +6,9 @@ import { connect } from 'react-redux'
 
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
-
-
 import '../App.css';
 
-
-
-
 class NavigationBar extends Component {
-    
-    
-
-    changePageToHome(){
-        this.props.changePageHome()
-
-    }
-    changePageToTracking(){
-        this.props.changePageTracking()
-    }
-
       render() {
         return (
             <div>
@@ -37,12 +21,12 @@ class NavigationBar extends Component {
                     <Nav>
                         <NavItem 
                         eventKey={1} 
-                        onClick={(e) => this.changePageToHome(e)}>
+                        onClick={(e) => this.props.changePageHome(e)}>
                         Home
                         </NavItem>
                         <NavItem 
                             eventKey={2} 
-                            onClick={(e) => this.changePageToTracking(e)}>
+                            onClick={(e) => this.props.changePageTracking(e)}>
                         Tracking
                         </NavItem>
                         <NavItem 
