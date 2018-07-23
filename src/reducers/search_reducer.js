@@ -18,9 +18,9 @@ export default (state = INITIAL_STATE, action) => {
         case SEARCH_CHANGE:
             console.log('This is changed to: ', action.payload)
             return {...state, searchItem: action.payload};
-        case SEARCH_SUBMIT:
-            console.log("Search submitted: ", action.payload)
-            return {...state, searchItem:''};
+        // case SEARCH_SUBMIT:
+        //     console.log("Search submitteded")
+        //     return {...state,};
         case SEARCH_INITIATE:
             console.log("Search Initiated: ")
             return {...state, loading: true};
