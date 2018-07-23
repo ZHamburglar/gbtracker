@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Tracking from './pages/Tracking';
-import NavigationBar from './components/Navbar'
+import HistoryGraph from './pages/HistoryGraph';
+
+import NavigationBar from './components/Navbar';
 
 class App extends Component {
   render() {
@@ -12,7 +14,9 @@ class App extends Component {
     
         <main>
           <Route exact path="/" component={Home} />
-          <Route exact path="/track" component={Tracking} />
+          <Route path="/track" component={Tracking} />
+          <Route path="/graph" component={HistoryGraph} />
+
         </main>
       </div>
     );
