@@ -40,12 +40,12 @@ export const searchSubmit = (text, callback) => async (dispatch) => {
                         'Access-Control-Allow-Origin': '*'}
         })
         console.log("data", data)
-        
-
+        dispatch({type:SEARCH_SUCCESS, payload: data})
         callback();
     } catch(e){
         return {
-            type: SEARCH_FAILURE
+            type: SEARCH_FAILURE,
+            payload: e
         }
     }
     

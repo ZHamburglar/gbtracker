@@ -28,7 +28,7 @@ export default (state = INITIAL_STATE, action) => {
         case SEARCH_FAILURE:
             return {...state, loading: false};
         case SEARCH_SUCCESS:
-            return {...state, loading: false};
+            return {...state, loading: false, gList: action.payload, searchItem: ''};
         default:
             return state;
     };
