@@ -1,7 +1,6 @@
 import axios from 'axios';
 import qs from 'qs';
 
-
 import {
     SEARCH_CHANGE,
     SEARCH_SUBMIT,

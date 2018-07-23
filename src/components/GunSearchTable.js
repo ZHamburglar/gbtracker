@@ -66,7 +66,7 @@ class GunSearchTable extends Component {
                     Header: "Track",
                     Cell: (row) => {
                         console.log("huh", row.original)
-                      return <div><Button onClick={()=> console.log('clicked', row)}>Click Me</Button></div>
+                      return <div><Button onClick={()=> this.props.addItemTrack(row.original)}>Click Me</Button></div>
                     },
                   id: "status"
                 }
@@ -87,9 +87,10 @@ class GunSearchTable extends Component {
   }
 }
 
-const mapStateToProps = ({ searchReducer }) => {
+const mapStateToProps = ({ searchReducer, trackitemReducer }) => {
     const { gList } = searchReducer
-    return { gList }
+    const { trackingList } = trackitemReducer
+    return { gList, trackingList }
   }
 
 export default connect(mapStateToProps, actions)(GunSearchTable);

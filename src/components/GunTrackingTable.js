@@ -18,14 +18,14 @@ import "./index.css";
 class GunTrackingTable extends Component {
 
   render() {
-    const { gList } = this.props;
-    console.log("these props", this.props, gList)
+    const { gList, trackingList } = this.props;
+    console.log("these props", this.props, trackingList)
     
 
     return (
       <div>
         <ReactTable
-          data={gList.results}
+          data={trackingList}
           columns={[
             {
               Header: "Search List",
@@ -87,9 +87,10 @@ class GunTrackingTable extends Component {
   }
 }
 
-const mapStateToProps = ({ searchReducer }) => {
-    const { gList } = searchReducer
-    return { gList }
-  }
+const mapStateToProps = ({ searchReducer, trackitemReducer }) => {
+  const { gList } = searchReducer
+  const { trackingList } = trackitemReducer
+  return { gList, trackingList }
+}
 
 export default connect(mapStateToProps, actions)(GunTrackingTable);
