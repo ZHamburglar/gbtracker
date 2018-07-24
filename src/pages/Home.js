@@ -11,6 +11,7 @@ import '../App.css';
 
 import SearchBar from '../components/SearchBar';
 import GunSearchTable from '../components/GunSearchTable';
+import GunTrackingTable from '../components/GunTrackingTable';
 
 class Home extends Component {
   constructor(props) {
@@ -33,6 +34,12 @@ class Home extends Component {
       return (
         <div> 
           <GunSearchTable />
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <GunTrackingTable />
         </div>
       )
     }
