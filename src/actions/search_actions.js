@@ -1,18 +1,20 @@
 import axios from 'axios';
-import qs from 'qs';
+// import qs from 'qs';
 
 import {
     SEARCH_CHANGE,
-    SEARCH_SUBMIT,
+    // SEARCH_SUBMIT,
     SEARCH_INITIATE,
     SEARCH_SUCCESS,
     SEARCH_FAILURE
 } from './types';
 
-const GB_ROOT_URL ='https://api.sandbox.gunbroker.com/v1/items?';
-const GB_QUERY_PARAMS = {
-    keyword: 'glock'
-}
+// This will build the query that goes to the API, ROOT_URL is appended with corresponding QUERY_PARAMS
+
+// const GB_ROOT_URL ='https://api.sandbox.gunbroker.com/v1/items?';
+// const GB_QUERY_PARAMS = {
+//     keyword: 'glock'
+// }
 
 const buildGBQueryUrl = (text) => {
     return 'https://cors-anywhere.herokuapp.com/https://api.sandbox.gunbroker.com/v1/items?keywords=glock&NoReserveItems=true&HasPictures=true'

@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-
+import moment from 'moment';
 import '../App.css';
 
+
+
 class Footer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          date: '',
+        };
+      }
+
+
       render() {
+        const currentYear = moment().format("YYYY");
         return (
-            <div>
-                HERE IS THE FOOTER
+            <div className="footerText">
+                Bear Mobile
+                &copy; 2018 - {currentYear}
             </div>
         );
       }
+
 }
 
 export default Footer;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 import { connect } from 'react-redux';
-import { FormGroup, ControlLabel, FormControl, Button, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 
 // import { makeData } from "./Utils";
@@ -19,7 +18,7 @@ class GunSearchTable extends Component {
 
   render() {
     const { gList } = this.props;
-    console.log("these props", this.props, gList)
+    // console.log("these props", this.props, gList)
     
 
     return (
@@ -54,7 +53,7 @@ class GunSearchTable extends Component {
                     Header: "Status",
                     Cell: (row) => {
                         // console.log("huh", row.original)
-                      return <div><img height={50} src={row.original.thumbnailURL}/></div>
+                      return <div><img height={50} src={row.original.thumbnailURL} alt={row.original.title}/></div>
                     },
                   id: "status"
                 },

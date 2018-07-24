@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Tracking from './pages/Tracking';
 import HistoryGraph from './pages/HistoryGraph';
@@ -20,9 +20,11 @@ class App extends Component {
           <Route path="/graph" component={HistoryGraph} />
 
         </main>
-
-        <Footer/>
-        
+        <div className="footerContainer">
+          <div className="footerPosition">
+            <Footer/>
+          </div>
+        </div>
       </div>
     );
   }

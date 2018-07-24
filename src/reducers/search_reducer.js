@@ -1,6 +1,5 @@
 import {
     SEARCH_CHANGE,
-    SEARCH_SUBMIT,
     SEARCH_INITIATE,
     SEARCH_SUCCESS,
     SEARCH_FAILURE
@@ -19,9 +18,6 @@ export default (state = INITIAL_STATE, action) => {
         case SEARCH_CHANGE:
             console.log('This is changed to: ', action.payload)
             return {...state, searchItem: action.payload};
-        // case SEARCH_SUBMIT:
-        //     console.log("Search submitteded")
-        //     return {...state,};
         case SEARCH_INITIATE:
             console.log("Search Initiated")
             return {...state, loading: true};
