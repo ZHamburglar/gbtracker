@@ -13,6 +13,10 @@ import '../App.css';
 // Import redux provider
 
 class SearchBar extends Component {
+  handleEnter = (e) => {
+    e.preventDefault();  
+    this.props.searchSubmit(this.props.searchItem)
+  }
 
   handleSubmit = () => {
     const { searchItem } = this.props
@@ -29,7 +33,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div>
-        <Form inline>
+        <Form onSubmit={this.handleEnter} inline>
             <FormGroup controlId="formInlineName">
                 <ControlLabel>Name</ControlLabel>{'  '}
                 <FormControl 
