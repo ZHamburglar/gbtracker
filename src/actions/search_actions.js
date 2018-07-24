@@ -1,9 +1,8 @@
 import axios from 'axios';
-// import qs from 'qs';
+import qs from 'qs';
 
 import {
     SEARCH_CHANGE,
-    // SEARCH_SUBMIT,
     SEARCH_INITIATE,
     SEARCH_SUCCESS,
     SEARCH_FAILURE
@@ -11,13 +10,20 @@ import {
 
 // This will build the query that goes to the API, ROOT_URL is appended with corresponding QUERY_PARAMS
 
-// const GB_ROOT_URL ='https://api.sandbox.gunbroker.com/v1/items?';
-// const GB_QUERY_PARAMS = {
-//     keyword: 'glock'
-// }
+const GB_ROOT_URL ='https://cors-anywhere.herokuapp.com/https://api.sandbox.gunbroker.com/v1/items?NoReserveItems=true&HasPictures=true&';
+const GB_QUERY_PARAMS = {
+    // keywords: 'glock',
+    BuyNowOnly: 'true'
+}
+
+//
+// Working now, refactor to pull from the reducer state to function correctly.
+//
 
 const buildGBQueryUrl = (text) => {
-    return 'https://cors-anywhere.herokuapp.com/https://api.sandbox.gunbroker.com/v1/items?keywords=glock&NoReserveItems=true&HasPictures=true'
+    // This builds the query to the API using the Query Params
+    const query = qs.stringify({ ...GB_QUERY_PARAMS, keywords: text })
+    return `${GB_ROOT_URL}${query}`
 }
 
 
