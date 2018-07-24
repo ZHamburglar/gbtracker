@@ -66,7 +66,7 @@ class GunTrackingTable extends Component {
                     Header: "Track",
                     Cell: (row) => {
                         console.log("huh", row.original)
-                      return <div><Button onClick={()=> console.log('clicked', row.original)}>Click Me</Button></div>
+                      return <div><Button onClick={()=> console.log('clicked', row.original)}>Update</Button></div>
                     },
                   id: "status"
                 }

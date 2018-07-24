@@ -66,7 +66,7 @@ class GunSearchTable extends Component {
                     Header: "Track",
                     Cell: (row) => {
                         // console.log("huh", row.original)
-                      return <div><Button onClick={()=> this.props.addItemTrack(row.original)}>Click Me</Button></div>
+                      return <div><Button onClick={()=> this.props.addItemTrack(row.original)}>Track This Item</Button></div>
                     },
                   id: "status"
                 }
