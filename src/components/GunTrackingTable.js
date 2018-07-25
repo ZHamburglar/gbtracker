@@ -11,10 +11,34 @@ import * as actions from '../actions';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 
-import "./index.css";
+import ReactModal from 'react-modal';
+
+import RemovalModal from './RemovalModal';
+
+// import "./index.css";
 
 
 class GunTrackingTable extends Component {
+
+    constructor () {
+      super();
+      this.state = {
+        showModal: false
+      };
+      
+      this.handleOpenModal = this.handleOpenModal.bind(this);
+      this.handleCloseModal = this.handleCloseModal.bind(this);
+    }
+    
+    handleOpenModal () {
+      this.setState({ showModal: true });
+    }
+    
+    handleCloseModal () {
+      this.setState({ showModal: false });
+    }
+
+
 
   render() {
     const { trackingList } = this.props;
@@ -23,6 +47,7 @@ class GunTrackingTable extends Component {
 
     return (
       <div>
+        <RemovalModal />
         <ReactTable
           data={trackingList}
           columns={[
@@ -68,6 +93,14 @@ class GunTrackingTable extends Component {
                       return <div><Button onClick={()=> console.log('clicked', row.original)}>Update</Button></div>
                     },
                   id: "status"
+                },
+                {
+                    Header: "Remove",
+                    Cell: (row) => {
+                        console.log("huh", row.original)
+                      return <div><Button onClick={this.handleOpenModal}>Remove</Button></div>
+                    },
+                  id: "status"
                 }
               ]
             }
@@ -81,6 +114,17 @@ class GunTrackingTable extends Component {
           defaultPageSize={5}
           className="-striped -highlight"
         />
+        <ReactModal 
+           isOpen={this.state.showModal}
+           contentLabel="Remove Item from Tracking?"
+           className="Modal"
+           overlayClassName="Overlay"
+           closeTimeoutMS={200}
+
+        >
+          <p>This is where we set up the modal text!</p>
+          <button onClick={this.handleCloseModal}>Close Modal</button>
+        </ReactModal>
       </div>
     );
   }
