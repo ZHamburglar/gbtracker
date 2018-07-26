@@ -85,10 +85,9 @@ class GunSearchTable extends Component {
   }
 }
 
-const mapStateToProps = ({ searchReducer, trackitemReducer }) => {
+const mapStateToProps = ({ searchReducer }) => {
     const { gList } = searchReducer
-    const { trackingList } = trackitemReducer
-    return { gList, trackingList }
+    return { gList }
   }
 
 export default connect(mapStateToProps, actions)(GunSearchTable);

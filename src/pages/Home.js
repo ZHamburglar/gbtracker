@@ -39,7 +39,7 @@ class Home extends Component {
     } else {
       return (
         <div>
-          <GunTrackingTable />
+          <GunSearchTable />
         </div>
       )
     }

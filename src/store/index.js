@@ -60,8 +60,9 @@ export const history = createHistory();
 // const epicMiddleware = createEpicMiddleware(epics);
 
 const persistConfig = {
-	  key: 'root'
-	, storage
+    key: 'root', 
+    storage,
+    whitelist:['trackitemReducer']
 };
 
 export const store = createStore(
