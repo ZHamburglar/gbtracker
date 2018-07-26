@@ -11,7 +11,6 @@ import * as actions from '../actions';
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 
-import "./index.css";
 
 
 class GunSearchTable extends Component {
