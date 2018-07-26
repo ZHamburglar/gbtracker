@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Tracking from './pages/Tracking';
 import HistoryGraph from './pages/HistoryGraph';
