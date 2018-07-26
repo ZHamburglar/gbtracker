@@ -21,35 +21,39 @@ import RemovalModal from './RemovalModal';
 
 class GunTrackingTable extends Component {
 
-    constructor () {
-      super();
-      this.state = {
-        showModal: false
-      };
-    }
+    // constructor () {
+    //   super();
+    //   this.state = {
+    //     showModal: false
+    //   };
+    // }
     
-    handleOpenModal = () => {
+    handleOpenModal = (row) => {
       this.setState({ showModal: true });
+      console.log("modal is being opened: ", row)
     }
     
     handleCloseModal = () =>{
       this.setState({ showModal: false });
     }
 
-    calculateTimeLeft = (e, time) => {
-      console.log('this is the time left', time)
+    handleRemoveItem = (item) => {
+      this.setState({ showModal: false });
+      console.log("item", item)
+      this.props.removeItemTrack(item)
     }
 
-
+    calculateTimeLeft = (e, time) => {
+      // console.log('this is the time left', time)
+    }
 
   render() {
-    const { trackingList } = this.props;
-    console.log("these props", this.props, trackingList)
+    const { trackingList, showModal } = this.props;
+    // console.log("these props", this.props, trackingList)
     
 
     return (
       <div>
-        <RemovalModal />
         <ReactTable
           data={trackingList}
           columns={[
@@ -95,7 +99,7 @@ class GunTrackingTable extends Component {
                 {
                     Header: "Track",
                     Cell: (row) => {
-                        console.log("huh", row.original)
+                        // console.log("huh", row.original)
                       return <div><Button onClick={()=> console.log('clicked', row.original)}>Update</Button></div>
                     },
                   id: "status"
@@ -103,8 +107,8 @@ class GunTrackingTable extends Component {
                 {
                     Header: "Remove",
                     Cell: (row) => {
-                        console.log("huh", row.original)
-                      return <div><Button onClick={this.handleOpenModal}>Remove</Button></div>
+                        // console.log("huh", row.original)
+                      return <div><Button onClick={() => this.props.openRemovalModal()}>Remove</Button></div>
                     },
                   id: "status"
                 }
@@ -120,25 +124,23 @@ class GunTrackingTable extends Component {
           defaultPageSize={5}
           className="-striped -highlight"
         />
-        <ReactModal 
-           isOpen={this.state.showModal}
+        <RemovalModal 
+           isOpen={this.props.showModal}
            contentLabel="Remove Item from Tracking?"
            className="Modal"
            overlayClassName="Overlay"
            closeTimeoutMS={200}
-
-        >
-          <p>This is where we set up the modal text!</p>
-          <button onClick={this.handleCloseModal}>Close Modal</button>
-        </ReactModal>
+           ariaHideApp={false}
+           closeModal={this.handleCloseModal}
+        />
       </div>
     );
   }
 }
 
 const mapStateToProps = ({ trackitemReducer }) => {
-  const { trackingList } = trackitemReducer
-  return { trackingList }
+  const { trackingList, showModal } = trackitemReducer
+  return { trackingList, showModal }
 }
 
 export default connect(mapStateToProps, actions)(GunTrackingTable);

@@ -1,9 +1,13 @@
 import {
-    TRACK_ITEM
+    TRACK_ITEM,
+    STOP_TRACK_ITEM,
+    OPEN_MODAL,
+    CLOSE_MODAL
 } from '../actions/types';
 
 const INITIAL_STATE = {
-    trackingList: []
+    trackingList: [],
+    showModal: true
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -24,6 +28,14 @@ export default (state = INITIAL_STATE, action) => {
                 ...state,
                 trackingList: [...state.trackingList, action.payload]
             };
+        case STOP_TRACK_ITEM:
+            console.log('STOP TRACKING THE ITEM IN REDUCER');
+        case OPEN_MODAL:
+            console.log("OPEN MODAL")
+            return { ...state, showModal: true};
+        case CLOSE_MODAL:
+            console.log("CLOSE MODAL")
+            return {...state, showModal: false};
         default:
             return state;
     };

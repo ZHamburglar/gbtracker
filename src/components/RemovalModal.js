@@ -1,46 +1,46 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
+import { connect } from 'react-redux';
+import * as actions from '../actions'
+
 import '../App.css';
 
 
 
 class RemovalModal extends Component {
-    constructor () {
-        super();
-        this.state = {
-          showModal: false
-        };
 
-        this.handleOpenModal = this.handleOpenModal.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
-    }
   
-    handleOpenModal () {
+    handleOpenModal = () => {
         this.setState({ showModal: true });
     }
     
-    handleCloseModal () {
+    handleCloseModal = () =>{
         this.setState({ showModal: false });
-    }
+      }
+  
+      handleRemoveItem = (item) => {
+        this.setState({ showModal: false });
+  
+        this.props.removeItemTrack(item)
+  
+  
+      }
 
       render() {
         return (
             <div>
                 <ReactModal 
-                    isOpen={this.state.showModal}
-                    contentLabel="Inline Styles Modal Example"
-                    style={{
-                        overlay: {
-                        backgroundColor: 'papayawhip'
-                    },
-                    content: {
-                        color: 'lightsteelblue'
-                    }
-                    }}
-                >
-                    <p>Modal text!</p>
-                    <button onClick={this.handleCloseModal}>Close Modal</button>
-                </ReactModal>            
+                    isOpen={this.props.isOpen}
+                    contentLabel="Remove Item from Tracking?"
+                    className="Modal"
+                    overlayClassName="Overlay"
+                    closeTimeoutMS={200}
+                    ariaHideApp={false}
+                    >
+                    <p>Do you want to stop tracking?</p>
+                    <button onClick={this.handleRemoveItem}>YES</button>
+                    <button onClick={this.props.closeRemovalModal}>NO</button>
+                </ReactModal>         
             </div>
             
         );
@@ -48,4 +48,9 @@ class RemovalModal extends Component {
 
 }
 
-export default RemovalModal;
+const mapStateToProps = ({ trackitemReducer }) => {
+    const { trackingList, showModal } = trackitemReducer
+    return { trackingList, showModal }
+  }
+
+export default connect(mapStateToProps, actions)(RemovalModal);
