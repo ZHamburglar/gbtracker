@@ -27,6 +27,7 @@ class RemovalModal extends Component {
       }
 
       render() {
+          console.log("modal props: ", this.props)
         return (
             <div>
                 <ReactModal 
@@ -38,7 +39,7 @@ class RemovalModal extends Component {
                     ariaHideApp={false}
                     >
                     <p>Do you want to stop tracking?</p>
-                    <button onClick={this.handleRemoveItem}>YES</button>
+                    <button onClick={() => this.props.removeItemTrack(this.props.removalItem)}>YES</button>
                     <button onClick={this.props.closeRemovalModal}>NO</button>
                 </ReactModal>         
             </div>
@@ -49,8 +50,8 @@ class RemovalModal extends Component {
 }
 
 const mapStateToProps = ({ trackitemReducer }) => {
-    const { trackingList, showModal } = trackitemReducer
-    return { trackingList, showModal }
+    const { trackingList, showModal, removalItem } = trackitemReducer
+    return { trackingList, showModal, removalItem }
   }
 
 export default connect(mapStateToProps, actions)(RemovalModal);

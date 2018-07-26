@@ -7,7 +7,8 @@ import {
 
 const INITIAL_STATE = {
     trackingList: [],
-    showModal: true
+    showModal: true,
+    removalItem: ''
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -29,10 +30,13 @@ export default (state = INITIAL_STATE, action) => {
                 trackingList: [...state.trackingList, action.payload]
             };
         case STOP_TRACK_ITEM:
-            console.log('STOP TRACKING THE ITEM IN REDUCER');
+
+            // Need to update this to remove the item from the trackinglist state, then it will work
+            console.log('STOP TRACKING THE ITEM IN REDUCER', action.payload);
+            return { ...state, showModal: false}
         case OPEN_MODAL:
-            console.log("OPEN MODAL")
-            return { ...state, showModal: true};
+            console.log("OPEN MODAL", action.payload)
+            return { ...state, showModal: true, removalItem: action.payload};
         case CLOSE_MODAL:
             console.log("CLOSE MODAL")
             return {...state, showModal: false};

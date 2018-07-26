@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import moment from 'moment';
 
-
-// import { makeData } from "./Utils";
 import * as actions from '../actions';
 
 
@@ -16,17 +14,11 @@ import ReactModal from 'react-modal';
 
 import RemovalModal from './RemovalModal';
 
-// import "./index.css";
 
 
 class GunTrackingTable extends Component {
 
-    // constructor () {
-    //   super();
-    //   this.state = {
-    //     showModal: false
-    //   };
-    // }
+ 
     
     handleOpenModal = (row) => {
       this.setState({ showModal: true });
@@ -108,7 +100,7 @@ class GunTrackingTable extends Component {
                     Header: "Remove",
                     Cell: (row) => {
                         // console.log("huh", row.original)
-                      return <div><Button onClick={() => this.props.openRemovalModal()}>Remove</Button></div>
+                      return <div><Button onClick={() => this.props.openRemovalModal(row.original)}>Remove</Button></div>
                     },
                   id: "status"
                 }

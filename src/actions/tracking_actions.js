@@ -21,9 +21,11 @@ export const removeItemTrack = (data) => {
     }
 }
 
-export const openRemovalModal = () => {
+export const openRemovalModal = (data) => {
+    console.log('Row info: ', data)
     return {
-        type: OPEN_MODAL
+        type: OPEN_MODAL,
+        payload: data
     }
 }
 
