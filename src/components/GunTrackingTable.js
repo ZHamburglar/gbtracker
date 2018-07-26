@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
+import moment from 'moment';
 
 
 // import { makeData } from "./Utils";
@@ -25,17 +26,18 @@ class GunTrackingTable extends Component {
       this.state = {
         showModal: false
       };
-      
-      this.handleOpenModal = this.handleOpenModal.bind(this);
-      this.handleCloseModal = this.handleCloseModal.bind(this);
     }
     
-    handleOpenModal () {
+    handleOpenModal = () => {
       this.setState({ showModal: true });
     }
     
-    handleCloseModal () {
+    handleCloseModal = () =>{
       this.setState({ showModal: false });
+    }
+
+    calculateTimeLeft = (e, time) => {
+      console.log('this is the time left', time)
     }
 
 
@@ -84,7 +86,11 @@ class GunTrackingTable extends Component {
                 },
                 {
                     Header: "Time Left",
-                    accessor: "endingDate"
+                    Cell: (row) => {
+                      console.log("Time left: ", row.original.endingDate)
+                      // {this.calculateTimeLeft}
+                     return <div><Button onClick={this.calculateTimeLeft(row.original.endingDate)}>Update</Button></div>
+                  }
                 },
                 {
                     Header: "Track",
