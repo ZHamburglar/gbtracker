@@ -18,13 +18,20 @@ GUNBROKER_TEST_KEY
 
 ## History Graph:
 
+
 ## About:
+
+- [ ] Create About Page
+
+- [ ] Add personal information, github
 
 ## Project-wide
 
 - [x] Redux Persist
 
 - [x] React Router for Between Pages
+
+- [ ] Host on Github pages, etc.
 
 # Installed Packages
 - axios
