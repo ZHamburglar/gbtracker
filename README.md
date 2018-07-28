@@ -1,14 +1,7 @@
+# Clone and Start App
 
-
-# Tools
-* create-react-app cli
-* react-bootstrap
-* react-redux
-# Start App
-
-Install CRA globally, Clone repo, install, cd into folder and run:
 ```git
-npm install -g create-react-app
+git clone https://github.com/ZHamburglar/gbtracker.git
 npm install
 npm start
 ```
@@ -31,6 +24,29 @@ History Graph:
 About:
 
 
-- [ ] Redux Persist
+- [x] Redux Persist
 
-- [ ] React Router for Between Pages
+- [x] React Router for Between Pages
+
+# Installed Packages
+- axios
+- connected-react-router
+- dotenv
+- history
+- moment 
+- qs
+- react
+- react-bootstrap
+- react-dom
+- react-modal
+- react-redux 
+- react-router-dom
+- react-router-redux
+- react-scripts
+- react-spinners
+- react-table
+- redux
+- redux-logger
+- redux-observable
+- redux-persist
+- redux-thunk
