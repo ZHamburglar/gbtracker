@@ -30,11 +30,8 @@ export default (state = INITIAL_STATE, action) => {
                 trackingList: [...state.trackingList, action.payload]
             };
         case STOP_TRACK_ITEM:
-
-            // Need to update this to remove the item from the trackinglist state, then it will
-            console.log('STOP TRACKING THE ITEM IN REDUCER', action.payload.itemID, "state", state.trackingList);
             const newTrackingList = state.trackingList.filter(item => item !== action.payload)
-            console.log('this is the new: ', newTrackingList)
+            // console.log('this is the new: ', newTrackingList)
             return { ...state, showModal: false, trackingList: newTrackingList}
         case OPEN_MODAL:
             console.log("OPEN MODAL", action.payload)

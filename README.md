@@ -19,6 +19,17 @@ GUNBROKER_TEST_KEY
 
 Todo:
 
-React Router for Between Pages,
 
-Redux Persist
+Pages:
+
+Home:
+
+Tracking:
+
+History Graph:
+
+About:
+
+
+[x] Redux Persist
+[x] React Router for Between Pages
