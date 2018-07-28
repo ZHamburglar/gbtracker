@@ -12,6 +12,8 @@ GUNBROKER_TEST_KEY
 
 # Todos:
 
+## Navigation Bar:
+
 ## Home:
 
 ## Tracking:
@@ -30,6 +32,8 @@ GUNBROKER_TEST_KEY
 - [x] Redux Persist
 
 - [x] React Router for Between Pages
+
+- [ ] CSS Styling of pages
 
 - [ ] Host on Github pages, etc.
 

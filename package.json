@@ -1,6 +1,9 @@
 {
   "name": "gun-broker-tracker",
+  "description": "locally stored application to track items on gunbroker and watch historical pricing.",
   "version": "0.2.0",
+  "author": "Kollin Brandenburg",
+  "homepage": "http://exampleurl.com",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
