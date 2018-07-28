@@ -31,5 +31,6 @@ History Graph:
 About:
 
 
-[x] Redux Persist
-[x] React Router for Between Pages
+- [ ] Redux Persist
+
+- [ ] React Router for Between Pages
