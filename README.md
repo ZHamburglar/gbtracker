@@ -6,23 +6,21 @@ npm install
 npm start
 ```
 
-
+# To Start Locally
 Create the .env file with these variable:
 GUNBROKER_TEST_KEY
 
-Todo:
+# Todos:
 
+## Home:
 
-Pages:
+## Tracking:
 
-Home:
+## History Graph:
 
-Tracking:
+## About:
 
-History Graph:
-
-About:
-
+## Project-wide
 
 - [x] Redux Persist
 
