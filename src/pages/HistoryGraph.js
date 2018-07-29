@@ -1,12 +1,14 @@
 import React, { Component } from 'react'; 
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import TimeChart from '../components/TimeChart';
+
 
 class HistoryGraph extends Component {
   render() {
     return (
         <div>
-            Graph Page
+            <TimeChart />
         </div>
     );
   }
