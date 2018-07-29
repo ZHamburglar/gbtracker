@@ -14,11 +14,18 @@ GUNBROKER_TEST_KEY
 
 ## Navigation Bar:
 
-## Home:
+## Home - Search:
+
+- [x] Implement React-Table into the page
+
 
 ## Tracking:
 
+- [x] Implement React-Table into the page
+
 ## History Graph:
+
+- [ ] Implement Rickshaw.js into the project.
 
 
 ## About:
