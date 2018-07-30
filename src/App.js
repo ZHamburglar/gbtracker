@@ -28,22 +28,41 @@ class App extends Component {
       mainHeight: this.refs.mainarea.offsetHeight, 
       footerHeight: this.refs.footer.offsetHeight 
     });
-
     console.log ("height of stuff ", this.state)
-
   }
 
-  componentDidUpdate() {
-    var heightNav = this.refs.navbar.offsetHeight
-    var heightMain = this.refs.mainarea.offsetHeight
-    var heightFooter = this.refs.footer.offsetHeight
-    // this.setState({ navHeight: heightNav, mainHeight: heightMain, footerHeight: heightFooter });
+  // componentDidMount() {
+  //   window.addEventListener("resize", this.calculateMainHeight());
+  // }
 
-    console.log ("height of stuff ", heightFooter, heightMain, heightNav, this.state)
+  // componentWillUnmount() {
+  //   window.removeEventListener("resize", this.calculateMainHeight());
+  // }
+
+  componentDidUpdate() {
+    console.log('boo nah?')
+    this.calculateMainHeight()
+  }
+
+    calculateMainHeight = () => {
+      if (this.refs.footer && this.refs.mainarea && this.refs.navbar){
+        return {
+          margin: '25px',
+          minHeight: (window.innerHeight - this.refs.footer.clientHeight - this.refs.navbar.clientHeight)
+        }
+      } else {
+        return {
+          margin: '25px',
+          minHeight: window.innerHeight
+        }
+      }
     }
   
+    
 
   render() {
+    
+
     const windowPanel = window.innerHeight;
     console.log("window Panel: ",windowPanel, window)
     
@@ -53,7 +72,7 @@ class App extends Component {
           <NavigationBar/>
         </div>
         <div>
-          <main style={mainPageStyle}>
+          <main style={this.calculateMainHeight()}>
             <div ref='mainarea'>
               <Route exact path="/" component={Home} />
               <Route path="/track" component={Tracking} />
@@ -77,10 +96,7 @@ class App extends Component {
   }
 }
 
-const mainPageStyle = {
-  margin: '25px',
-  minHeight: window.innerHeight
-};
+
 
 const pageLayout = {
   backgroundColor: '#b5b5b7'
