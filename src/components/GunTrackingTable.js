@@ -90,11 +90,13 @@ class GunTrackingTable extends Component {
                     Cell: (row) => {
                         // console.log("huh", row.original)
                         // return <div><Button onClick={()=> this.momentTime(row.original)}>Update</Button></div>
-
                         let timeEnding = moment(row.original.endingDate).unix()
                         let nowTime = moment().unix()
                         let timeDifference = timeEnding - nowTime
                         let timeEnd = moment.duration(timeDifference * 1000)
+                        if ( timeDifference < 0 ){
+                          return <div> Game Over Man </div>
+                        }
                         return <div>D: {timeEnd._data.days} H: {timeEnd._data.hours} M: {timeEnd._data.minutes} S: {timeEnd._data.seconds}</div>
                     },
                   id: "status"
