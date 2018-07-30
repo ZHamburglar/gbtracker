@@ -50,11 +50,9 @@ class Home extends Component {
       <div style={mainPageStyle}>
         <div style={searchBarDivide}>
           <SearchBar />
-
         </div>     
         <div>
-        {this.renderCardTable()}
-
+          {this.renderCardTable()}
         </div> 
     </div>
     );
@@ -68,7 +66,6 @@ const mapStateToProps = ({ searchReducer }) => {
 }
 
 const mainPageStyle = {
-  margin: '25px',
 };
 
 const searchBarDivide = {

@@ -3,6 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Tracking from './pages/Tracking';
 import HistoryGraph from './pages/HistoryGraph';
+import About from './pages/About';
+import Settings from './pages/Settings';
+import Share from './pages/Share';
+
 
 import NavigationBar from './components/Navbar';
 
@@ -14,10 +18,14 @@ class App extends Component {
       <div>
         <NavigationBar/>
     
-        <main>
+        <main style={mainPageStyle}>
           <Route exact path="/" component={Home} />
           <Route path="/track" component={Tracking} />
           <Route path="/graph" component={HistoryGraph} />
+          <Route path="/about" component={About} />
+          <Route path="/settings" component={Settings} />
+          <Route path="/share" component={Share} />
+
 
         </main>
         <div className="footerContainer">
@@ -29,5 +37,9 @@ class App extends Component {
     );
   }
 }
+
+const mainPageStyle = {
+  margin: '25px',
+};
 
 export default App;

@@ -49,10 +49,24 @@ class NavigationBar extends Component {
                                 </div>
                             } 
                             id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1}>Share</MenuItem>
-                            <MenuItem eventKey={3.2}>Settings</MenuItem>
-                            <MenuItem eventKey={3.3}>About</MenuItem>
-                            <MenuItem eventKey={3.3}>@GBTracker on <Icon icon={twitter} /></MenuItem>
+                            <MenuItem 
+                                eventKey={3.1}
+                                onClick={(e) => this.props.changePageShare(e)}>
+                                Share
+                            </MenuItem>
+                            <MenuItem 
+                                eventKey={3.2} onClick={(e) => this.props.changePageSettings(e)}>
+                                Settings
+                            </MenuItem>
+                            <MenuItem 
+                                eventKey={3.3} onClick={(e) => this.props.changePageAbout(e)}>
+                                About
+                            </MenuItem>
+                            <MenuItem 
+                                eventKey={3.3} 
+                                onClick={(e) => this.props.changePageGBTwitter(e)}>
+                                @GBTracker on <Icon icon={twitter} />
+                            </MenuItem>
                         </NavDropdown>
                     </Nav>
                 </Navbar>
@@ -63,7 +77,12 @@ class NavigationBar extends Component {
 const mapDispatchToProps = dispatch => bindActionCreators({
     changePageHome: () => push('/'),
     changePageTracking: () => push('/track'),
-    changePageHistory: () => push('/graph')
+    changePageHistory: () => push('/graph'),
+    changePageGBTwitter: () => push('https://twitter.com/gb_tracker'),
+    changePageAbout: () => push('/about'),
+    changePageSettings: () => push('/settings'),
+    changePageShare: () => push('/share')
+
   }, dispatch)
 
 export default connect(null, mapDispatchToProps)(NavigationBar);
