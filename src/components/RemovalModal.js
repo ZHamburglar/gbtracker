@@ -5,11 +5,7 @@ import * as actions from '../actions'
 
 import '../App.css';
 
-
-
 class RemovalModal extends Component {
-
-  
     handleOpenModal = () => {
         this.setState({ showModal: true });
     }
@@ -20,10 +16,7 @@ class RemovalModal extends Component {
   
       handleRemoveItem = (item) => {
         this.setState({ showModal: false });
-  
         this.props.removeItemTrack(item)
-  
-  
       }
 
       render() {
@@ -46,7 +39,6 @@ class RemovalModal extends Component {
             
         );
       }
-
 }
 
 const mapStateToProps = ({ trackitemReducer }) => {

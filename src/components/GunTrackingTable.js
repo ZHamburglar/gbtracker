@@ -14,12 +14,8 @@ import ReactModal from 'react-modal';
 
 import RemovalModal from './RemovalModal';
 
-
-
 class GunTrackingTable extends Component {
-
- 
-    
+  
     handleOpenModal = (row) => {
       this.setState({ showModal: true });
       console.log("modal is being opened: ", row)

@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
-// import { Grid } from 'react-bootstrap';
-// import { Link } from 'react-router-dom'; 
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { GridLoader } from "react-spinners";
-
-// import moment from 'moment';
 
 import '../App.css';
 
 import SearchBar from '../components/SearchBar';
 import GunSearchTable from '../components/GunSearchTable';
-import GunTrackingTable from '../components/GunTrackingTable';
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: '',
-    };
-  }
 
   renderCardTable() {
     console.log("this works here")
@@ -59,7 +48,6 @@ class Home extends Component {
   }
 }
 
-
 const mapStateToProps = ({ searchReducer }) => {
   const { gList, loading, searchItem } = searchReducer
   return { gList, loading, searchItem }
@@ -76,6 +64,5 @@ const loadingIconPosition = {
   display: 'flex', 
   justifyContent: 'center'
 }
-
 
 export default connect(mapStateToProps, actions)(Home);

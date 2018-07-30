@@ -2,17 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import '../App.css';
 
-
-
 class Footer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          date: '',
-        };
-      }
-
-
       render() {
         const currentYear = moment().format("YYYY");
         return (

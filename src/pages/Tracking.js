@@ -5,7 +5,6 @@ import GunTrackingTable from '../components/GunTrackingTable';
 import '../App.css';
 
 class Tracking extends Component {
-
   render() {
     return (
       <div>

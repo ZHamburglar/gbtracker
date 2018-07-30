@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import TimeChart from '../components/TimeChart';
 
-
 class HistoryGraph extends Component {
   render() {
     return (
@@ -13,7 +12,6 @@ class HistoryGraph extends Component {
     );
   }
 }
-
 
 const mapStateToProps = ({ searchReducer }) => {
   const { gList, loading, searchItem } = searchReducer

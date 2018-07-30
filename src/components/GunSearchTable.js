@@ -2,24 +2,18 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
-
 // import { makeData } from "./Utils";
 import * as actions from '../actions';
-
 
 // Import React Table
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 
-
-
 class GunSearchTable extends Component {
 
   render() {
     const { gList } = this.props;
-    // console.log("these props", this.props, gList)
     
-
     return (
       <div>
         <ReactTable

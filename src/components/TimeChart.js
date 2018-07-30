@@ -85,9 +85,6 @@ var graph = new Rickshaw.Graph( {
         console.log(' we are now rendering this graph')
     }
 
-
-
-  
     render() {
       return(
           <div>
