@@ -14,10 +14,6 @@ GUNBROKER_TEST_KEY
 
 ![](src/images/colorpalette.png?raw=true)
 
-#252839
-#677077
-#b5b5b7
-#f2b632
 
 # Todos:
 

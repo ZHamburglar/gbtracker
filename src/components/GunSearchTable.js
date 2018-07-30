@@ -15,7 +15,7 @@ class GunSearchTable extends Component {
     const { gList } = this.props;
     
     return (
-      <div>
+      <div style={tableBackground}>
         <ReactTable
           data={gList.results}
           columns={[
@@ -83,5 +83,10 @@ const mapStateToProps = ({ searchReducer }) => {
     const { gList } = searchReducer
     return { gList }
   }
+
+const tableBackground = {
+  backgroundColor: '#FFFFFF'
+
+}
 
 export default connect(mapStateToProps, actions)(GunSearchTable);

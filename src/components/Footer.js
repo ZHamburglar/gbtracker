@@ -16,7 +16,9 @@ class Footer extends Component {
 
 const footerText = {
     display: 'flex', 
-    justifyContent: 'center'
+    justifyContent: 'center',
+    color: '#252839'
   }
+
 
 export default Footer;

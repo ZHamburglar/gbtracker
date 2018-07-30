@@ -15,37 +15,40 @@ class NavigationBar extends Component {
       render() {
         return (
             <div>
-                <Navbar>
+                <Navbar style={navBarStyle}>
                     <Navbar.Header>
                         <Navbar.Brand>
                             GBTracker
                         </Navbar.Brand>
                     </Navbar.Header>
-                    <Nav>
+                    <Nav style={menuItemStyle} >
                         <NavItem 
-                        eventKey={1} 
+                        eventKey={1}
+                        style={menuItemStyle} 
                         onClick={(e) => this.props.changePageHome(e)}>
-                        Home
+                            <span style={menuItemStyle}>HOME</span>
                         </NavItem>
                         <NavItem 
                             eventKey={2} 
+                            style={menuItemStyle} 
                             onClick={(e) => this.props.changePageTracking(e)}>
-                        Tracking
+                            <span style={menuItemStyle}>TRACKING</span>
                         </NavItem>
                         <NavItem 
-                            eventKey={2} 
+                            eventKey={2}
+                            style={menuItemStyle}  
                             onClick={(e) => this.props.changePageHistory(e)}>
-                        Historical Prices
+                            <span style={menuItemStyle}>HISTORICAL PRICES</span>
                         </NavItem>
                     </Nav>
-                    <Nav pullRight>
+                    <Nav pullRight style={menuItemStyle}>
                         <NavDropdown 
                             eventKey={3} 
                             noCaret
                             
                             title={
                                 <div className="pull-left">
-                                    <Icon icon={menu} />
+                                    <Icon icon={menu} style={menuItemStyle} />
                                 </div>
                             } 
                             id="basic-nav-dropdown">
@@ -74,6 +77,16 @@ class NavigationBar extends Component {
         );
       }
 }
+
+const navBarStyle = {
+    backgroundColor: '#252839'
+}
+
+const menuItemStyle = {
+    color: '#f2b632',
+    backgroundColor: '#252839'
+}
+
 const mapDispatchToProps = dispatch => bindActionCreators({
     changePageHome: () => push('/'),
     changePageTracking: () => push('/track'),

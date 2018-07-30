@@ -65,4 +65,8 @@ const loadingIconPosition = {
   justifyContent: 'center'
 }
 
+const testCSS = {
+  zIndex: 2
+}
+
 export default connect(mapStateToProps, actions)(Home);

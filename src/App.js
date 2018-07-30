@@ -15,24 +15,29 @@ import Footer from './components/Footer';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={pageLayout}>
+        
         <NavigationBar/>
-    
-        <main style={mainPageStyle}>
-          <Route exact path="/" component={Home} />
-          <Route path="/track" component={Tracking} />
-          <Route path="/graph" component={HistoryGraph} />
-          <Route path="/about" component={About} />
-          <Route path="/settings" component={Settings} />
-          <Route path="/share" component={Share} />
-
-
-        </main>
-        <div className="footerContainer">
-          <div className="footerPosition">
-            <Footer/>
+        <div>
+          <main style={mainPageStyle}>
+            <div>
+              <Route exact path="/" component={Home} />
+              <Route path="/track" component={Tracking} />
+              <Route path="/graph" component={HistoryGraph} />
+              <Route path="/about" component={About} />
+              <Route path="/settings" component={Settings} />
+              <Route path="/share" component={Share} />
+            </div>
+          </main>
+          <div style={pageLayout}>
+            <div className="footerPosition">
+              <Footer/>
+            </div>
           </div>
         </div>
+        
+
+
       </div>
     );
   }
@@ -41,5 +46,14 @@ class App extends Component {
 const mainPageStyle = {
   margin: '25px',
 };
+
+const pageLayout = {
+  backgroundColor: '#b5b5b7'
+}
+
+const zChange = {
+  zIndex: 2
+}
+
 
 export default App;
