@@ -14,6 +14,10 @@ GUNBROKER_TEST_KEY
 
 ## Navigation Bar:
 
+- [ ] Create Logo and import into top left
+
+- [ ] Style the Navbar with overal CSS styling
+
 ## Home - Search:
 
 - [x] Implement React-Table into the page
@@ -43,6 +47,8 @@ GUNBROKER_TEST_KEY
 - [ ] CSS Styling of pages
 
 - [ ] Host on Github pages, etc.
+
+- [x] Added Icon Packages from React-Icons-Kit
 
 # Installed Packages
 - axios

@@ -3,7 +3,9 @@ import { push } from 'connected-react-router'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Icon } from 'react-icons-kit'
+import { menu } from 'react-icons-kit/icomoon/menu'
+import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 
 import '../App.css';
 
@@ -33,6 +35,23 @@ class NavigationBar extends Component {
                             onClick={(e) => this.props.changePageHistory(e)}>
                         Historical Prices
                         </NavItem>
+                    </Nav>
+                    <Nav pullRight>
+                        <NavDropdown 
+                            eventKey={3} 
+                            noCaret
+                            
+                            title={
+                                <div className="pull-left">
+                                    <Icon icon={menu} />
+                                </div>
+                            } 
+                            id="basic-nav-dropdown">
+                            <MenuItem eventKey={3.1}>Action</MenuItem>
+                            <MenuItem eventKey={3.2}>Another action</MenuItem>
+                            <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                            <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                        </NavDropdown>
                     </Nav>
                 </Navbar>
             </div>
