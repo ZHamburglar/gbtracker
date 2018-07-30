@@ -15,7 +15,7 @@ class Home extends Component {
     if (this.props.loading === true ){
       return (
         <div style={loadingIconPosition} className="d-flex justify-content-center">
-          <GridLoader color={"#228B22"} />
+          <GridLoader color={"#f2b632"} />
         </div>
       )
     } else if (this.props.loading === false && this.props.gList.pageIndex > 0 ){
@@ -70,3 +70,4 @@ const testCSS = {
 }
 
 export default connect(mapStateToProps, actions)(Home);
+

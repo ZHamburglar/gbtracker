@@ -13,14 +13,48 @@ import NavigationBar from './components/Navbar';
 import Footer from './components/Footer';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      navHeight: '',
+      mainHeight: '',
+      footerHeight: ''
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ 
+      navHeight: this.refs.navbar.offsetHeight, 
+      mainHeight: this.refs.mainarea.offsetHeight, 
+      footerHeight: this.refs.footer.offsetHeight 
+    });
+
+    console.log ("height of stuff ", this.state)
+
+  }
+
+  componentDidUpdate() {
+    var heightNav = this.refs.navbar.offsetHeight
+    var heightMain = this.refs.mainarea.offsetHeight
+    var heightFooter = this.refs.footer.offsetHeight
+    // this.setState({ navHeight: heightNav, mainHeight: heightMain, footerHeight: heightFooter });
+
+    console.log ("height of stuff ", heightFooter, heightMain, heightNav, this.state)
+    }
+  
+
   render() {
+    const windowPanel = window.innerHeight;
+    console.log("window Panel: ",windowPanel, window)
+    
     return (
       <div style={pageLayout}>
-        
-        <NavigationBar/>
+        <div ref='navbar'>
+          <NavigationBar/>
+        </div>
         <div>
           <main style={mainPageStyle}>
-            <div>
+            <div ref='mainarea'>
               <Route exact path="/" component={Home} />
               <Route path="/track" component={Tracking} />
               <Route path="/graph" component={HistoryGraph} />
@@ -30,7 +64,7 @@ class App extends Component {
             </div>
           </main>
           <div style={pageLayout}>
-            <div className="footerPosition">
+            <div className="footerPosition" ref='footer'>
               <Footer/>
             </div>
           </div>
@@ -45,6 +79,7 @@ class App extends Component {
 
 const mainPageStyle = {
   margin: '25px',
+  minHeight: window.innerHeight
 };
 
 const pageLayout = {
