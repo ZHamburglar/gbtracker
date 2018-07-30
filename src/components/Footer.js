@@ -16,13 +16,17 @@ class Footer extends Component {
       render() {
         const currentYear = moment().format("YYYY");
         return (
-            <div className="footerText">
+            <div style={footerText} className="footerText">
                 Bear Mobile
                 &copy; 2018 - {currentYear}
             </div>
         );
       }
-
 }
+
+const footerText = {
+    display: 'flex', 
+    justifyContent: 'center'
+  }
 
 export default Footer;

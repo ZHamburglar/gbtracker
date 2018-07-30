@@ -10,7 +10,7 @@ import {
 
 // This will build the query that goes to the API, ROOT_URL is appended with corresponding QUERY_PARAMS
 
-const GB_ROOT_URL ='https://cors-anywhere.herokuapp.com/https://api.sandbox.gunbroker.com/v1/items?NoReserveItems=true&HasPictures=true&';
+const GB_ROOT_URL ='https://cors-anywhere.herokuapp.com/https://api.sandbox.gunbroker.com/v1/items?NoReserveItems=true&HasPictures=true&PageSize=300&';
 const GB_QUERY_PARAMS = {
     // keywords: 'glock',
     BuyNowOnly: 'true'

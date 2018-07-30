@@ -77,7 +77,7 @@ class GunSearchTable extends Component {
               desc: false
             }
           ]}
-          defaultPageSize={5}
+          defaultPageSize={20}
           className="-striped -highlight"
         />
       </div>

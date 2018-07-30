@@ -25,7 +25,7 @@ class Home extends Component {
     console.log("this works here")
     if (this.props.loading === true ){
       return (
-        <div className="d-flex justify-content-center">
+        <div style={loadingIconPosition} className="d-flex justify-content-center">
           <GridLoader color={"#228B22"} />
         </div>
       )
@@ -47,8 +47,8 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div style={mainPageStyle}>
+        <div style={searchBarDivide}>
           <SearchBar />
 
         </div>     
@@ -66,5 +66,19 @@ const mapStateToProps = ({ searchReducer }) => {
   const { gList, loading, searchItem } = searchReducer
   return { gList, loading, searchItem }
 }
+
+const mainPageStyle = {
+  margin: '25px',
+};
+
+const searchBarDivide = {
+  marginBottom: '25px'
+}
+
+const loadingIconPosition = {
+  display: 'flex', 
+  justifyContent: 'center'
+}
+
 
 export default connect(mapStateToProps, actions)(Home);

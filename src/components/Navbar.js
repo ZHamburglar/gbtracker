@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { push } from 'connected-react-router'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import { push } from 'connected-react-router';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-import { Icon } from 'react-icons-kit'
-import { menu } from 'react-icons-kit/icomoon/menu'
+import { Icon } from 'react-icons-kit';
+import { menu } from 'react-icons-kit/icomoon/menu';
+import {twitter} from 'react-icons-kit/icomoon/twitter';
+
 import { Navbar, Nav, NavItem, MenuItem, NavDropdown } from 'react-bootstrap';
 
 import '../App.css';
@@ -47,10 +49,10 @@ class NavigationBar extends Component {
                                 </div>
                             } 
                             id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1}>Action</MenuItem>
-                            <MenuItem eventKey={3.2}>Another action</MenuItem>
-                            <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                            <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                            <MenuItem eventKey={3.1}>Share</MenuItem>
+                            <MenuItem eventKey={3.2}>Settings</MenuItem>
+                            <MenuItem eventKey={3.3}>About</MenuItem>
+                            <MenuItem eventKey={3.3}>@GBTracker on <Icon icon={twitter} /></MenuItem>
                         </NavDropdown>
                     </Nav>
                 </Navbar>
