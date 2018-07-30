@@ -50,7 +50,7 @@ class GunTrackingTable extends Component {
     
 
     return (
-      <div>
+      <div style={tableBackground}>
         <ReactTable
           data={trackingList}
           columns={[
@@ -131,6 +131,11 @@ class GunTrackingTable extends Component {
       </div>
     );
   }
+}
+
+const tableBackground = {
+  backgroundColor: '#FFFFFF'
+
 }
 
 const mapStateToProps = ({ trackitemReducer }) => {
