@@ -3,19 +3,6 @@ import Rickshaw from 'rickshaw';
 import '../App.css';
 
 
-
-// class TimeChart extends Component {
-//       render() {
-//         return (
-//             <div>
-//                 Time Chart Here
-//             </div>
-//         );
-//       }
-
-// }
-
-
 class TimeChart extends Component {
     constructor(props) {
         super(props);
@@ -29,6 +16,7 @@ class TimeChart extends Component {
     componentDidMount() {
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
+        console.log('resizing', window.innerWidth, window.innerHeight)
       // set up our data series with 50 random data points
 
 var seriesData = [ [], [], [] ];
@@ -93,14 +81,19 @@ var graph = new Rickshaw.Graph( {
         this.setState({ width: window.innerWidth, height: window.innerHeight });
       }
 
+    renderItemGraph = () => {
+        console.log(' we are now rendering this graph')
+    }
+
 
 
   
     render() {
       return(
           <div>
-        <div id="chart_container" />
-        <div id="legend" />
+            {this.renderItemGraph()}
+            <div id="chart_container" />
+            <div id="legend" />
         </div>
       );
     }

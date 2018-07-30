@@ -39,6 +39,15 @@ class GunTrackingTable extends Component {
       // console.log('this is the time left', time)
     }
 
+    momentTime = (time) => {
+      let timeEnding = moment(time.endingDate).unix()
+      let nowTime = moment().unix()
+      let timeDifference = timeEnding - nowTime
+      let timeEnd = moment.duration(timeDifference * 1000)
+
+      console.log("time end", timeEnd, "days: ", timeEnd._data.days)
+    }
+
   render() {
     const { trackingList, showModal } = this.props;
     // console.log("these props", this.props, trackingList)
@@ -83,16 +92,14 @@ class GunTrackingTable extends Component {
                 {
                     Header: "Time Left",
                     Cell: (row) => {
-                      console.log("Time left: ", row.original.endingDate)
-                      // {this.calculateTimeLeft}
-                     return <div><Button onClick={this.calculateTimeLeft(row.original.endingDate)}>Update</Button></div>
-                  }
-                },
-                {
-                    Header: "Track",
-                    Cell: (row) => {
                         // console.log("huh", row.original)
-                      return <div><Button onClick={()=> console.log('clicked', row.original)}>Update</Button></div>
+                        // return <div><Button onClick={()=> this.momentTime(row.original)}>Update</Button></div>
+
+                        let timeEnding = moment(row.original.endingDate).unix()
+                        let nowTime = moment().unix()
+                        let timeDifference = timeEnding - nowTime
+                        let timeEnd = moment.duration(timeDifference * 1000)
+                        return <div>D: {timeEnd._data.days} H: {timeEnd._data.hours} M: {timeEnd._data.minutes} S: {timeEnd._data.seconds}</div>
                     },
                   id: "status"
                 },

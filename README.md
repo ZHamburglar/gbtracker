@@ -25,7 +25,7 @@ GUNBROKER_TEST_KEY
 
 ## History Graph:
 
-- [ ] Implement Rickshaw.js into the project.
+- [x] Implement Rickshaw.js into the project.
 
 
 ## About:
