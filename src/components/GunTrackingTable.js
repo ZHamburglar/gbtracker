@@ -95,7 +95,7 @@ class GunTrackingTable extends Component {
                         let timeDifference = timeEnding - nowTime
                         let timeEnd = moment.duration(timeDifference * 1000)
                         if ( timeDifference < 0 ){
-                          return <div> Game Over Man </div>
+                          return <div><Button onClick={() => console.log(row.original)}>Track Final</Button></div>
                         }
                         return <div>D: {timeEnd._data.days} H: {timeEnd._data.hours} M: {timeEnd._data.minutes} S: {timeEnd._data.seconds}</div>
                     },

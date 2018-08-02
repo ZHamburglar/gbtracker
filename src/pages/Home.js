@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { GridLoader } from "react-spinners";
 
-import ip from 'ip';
-import geoip from 'geoip-lite';
+// import ip from 'ip';
+// import geoip from 'geoip-lite';
 import publicIp from 'public-ip';
 
 
@@ -16,7 +16,13 @@ import GunSearchTable from '../components/GunSearchTable';
 class Home extends Component {
 
   renderCardTable() {
-    console.log("this works here")
+    const yourIP = publicIp.v4()
+    publicIp.v4().then(ip => {
+      this.props.changeIpAddress(ip)
+
+    });
+    console.log(this.props)
+
     if (this.props.loading === true ){
       return (
         <div style={loadingIconPosition} className="d-flex justify-content-center">
@@ -56,9 +62,10 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = ({ searchReducer }) => {
+const mapStateToProps = ({ searchReducer,   ipaddressReducer}) => {
   const { gList, loading, searchItem } = searchReducer
-  return { gList, loading, searchItem }
+  const { ipAddress } = ipaddressReducer
+  return { gList, loading, searchItem, ipAddress }
 }
 
 const mainPageStyle = {

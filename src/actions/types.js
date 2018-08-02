@@ -9,3 +9,5 @@ export const TRACK_ITEM = 'track_item';
 export const STOP_TRACK_ITEM = 'stop_track_item';
 export const OPEN_MODAL = 'open_modal';
 export const CLOSE_MODAL = 'close_modal';
+
+export const IPADDRESS_CHANGE = 'ipaddress_change'

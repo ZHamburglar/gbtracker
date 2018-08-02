@@ -28,7 +28,7 @@ class App extends Component {
       mainHeight: this.refs.mainarea.offsetHeight, 
       footerHeight: this.refs.footer.offsetHeight 
     });
-    console.log ("height of stuff ", this.state)
+    // console.log ("height of stuff ", this.state)
   }
 
   // componentDidMount() {
@@ -40,7 +40,7 @@ class App extends Component {
   // }
 
   componentDidUpdate() {
-    console.log('boo nah?')
+    // console.log('boo nah?')
     this.calculateMainHeight()
   }
 
@@ -64,7 +64,7 @@ class App extends Component {
     
 
     const windowPanel = window.innerHeight;
-    console.log("window Panel: ",windowPanel, window)
+    // console.log("window Panel: ",windowPanel, window)
     
     return (
       <div style={pageLayout}>
