@@ -73,6 +73,7 @@ class GunSearchTable extends Component {
           ]}
           defaultPageSize={20}
           className="-striped -highlight"
+          SubComponent={(row) => <div style={{padding: '10px'}}>Title: {row.original.title}</div>}
         />
       </div>
     );

@@ -57,6 +57,8 @@ GUNBROKER_TEST_KEY
 
 - [x] Added Icon Packages from React-Icons-Kit
 
+- [ ] Update Zipcode automatically
+
 # Installed Packages
 - axios
 - connected-react-router

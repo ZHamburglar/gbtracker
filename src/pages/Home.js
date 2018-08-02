@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import { GridLoader } from "react-spinners";
 
+import ip from 'ip';
+import geoip from 'geoip-lite';
+import publicIp from 'public-ip';
+
+
 import '../App.css';
 
 import SearchBar from '../components/SearchBar';
@@ -35,6 +40,9 @@ class Home extends Component {
   }
 
   render() {
+    
+
+    
     return (
       <div style={mainPageStyle}>
         <div style={searchBarDivide}>
