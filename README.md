@@ -51,6 +51,8 @@ GUNBROKER_TEST_KEY
 
 - [ ] CSS Styling of pages
 
+- [ ] Webpack bundling Analyzer
+
 - [ ] Host on Github pages, etc.
 
 - [x] Added Icon Packages from React-Icons-Kit
@@ -77,3 +79,6 @@ GUNBROKER_TEST_KEY
 - redux-observable
 - redux-persist
 - redux-thunk
+
+
+
