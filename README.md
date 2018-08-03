@@ -43,6 +43,10 @@ GUNBROKER_TEST_KEY
 
 - [ ] Add personal information, github
 
+## Settings: 
+ 
+- [ ] Zipcode Manual Entry
+
 ## Project-wide
 
 - [x] Redux Persist

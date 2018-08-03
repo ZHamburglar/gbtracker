@@ -28,19 +28,10 @@ class App extends Component {
       mainHeight: this.refs.mainarea.offsetHeight, 
       footerHeight: this.refs.footer.offsetHeight 
     });
-    // console.log ("height of stuff ", this.state)
   }
 
-  // componentDidMount() {
-  //   window.addEventListener("resize", this.calculateMainHeight());
-  // }
-
-  // componentWillUnmount() {
-  //   window.removeEventListener("resize", this.calculateMainHeight());
-  // }
 
   componentDidUpdate() {
-    // console.log('boo nah?')
     this.calculateMainHeight()
   }
 
