@@ -4,7 +4,7 @@ import * as actions from '../actions';
 import { GridLoader } from "react-spinners";
 
 // import ip from 'ip';
-// import geoip from 'geoip-lite';
+import geoip from 'geoip-lite';
 import publicIp from 'public-ip';
 
 
@@ -12,6 +12,8 @@ import '../App.css';
 
 import SearchBar from '../components/SearchBar';
 import GunSearchTable from '../components/GunSearchTable';
+
+
 
 class Home extends Component {
 
